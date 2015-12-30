@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    private String[] myData = {"Aditya", "Vishal","Cheese", "Pepperoni", "Black Olives","Cheese", "Pepperoni", "Black Olives","Cheese", "Pepperoni", "Black Olives","Cheese", "Pepperoni", "Black Olives","Cheese", "Pepperoni", "Black Olives","Cheese", "Pepperoni", "Black Olives"};
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -31,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mAdapter = new MyAdapter(myData);
+        mRecyclerView.setAdapter(mAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
